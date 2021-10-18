@@ -48,64 +48,84 @@
         firstStar.addEventListener('mouseover', function () {
             if (!firstStar.classList.contains('goldenClass')) {
                 firstStar.classList.add(goldenClass);
-            }
+
+            };
         });
 
         secondStar.addEventListener('mouseover', function () {
             if (!secondStar.classList.contains('goldenClass')) {
-
-            }
+                secondStar.previousElementSibling.classList.add(goldenClass);
+                secondStar.classList.add(goldenClass);
+            };
         });
 
         thirdStar.addEventListener('mouseover', function () {
-            if (!secondStar.classList.contains('goldenClass')) {
-
-            }
+            if (!thirdStar.classList.contains('goldenClass')) {
+                let previousEl = thirdStar;
+                while (previousEl) {
+                    previousEl.classList.add(goldenClass);
+                    previousEl = previousEl.previousElementSibling;
+                };
+            };
         });
 
         fourthStar.addEventListener('mouseover', function () {
-            if (!secondStar.classList.contains('goldenClass')) {
-
-            }
+            if (!fourthStar.classList.contains('goldenClass')) {
+                let previousEl = fourthStar;
+                while (previousEl) {
+                    previousEl.classList.add(goldenClass);
+                    previousEl = previousEl.previousElementSibling;
+                };
+            };
         });
 
         fifthStar.addEventListener('mouseover', function () {
-            if (!secondStar.classList.contains('goldenClass')) {
-
-            }
+            if (!fifthStar.classList.contains('goldenClass')) {
+                let previousEl = fifthStar;
+                while (previousEl) {
+                    previousEl.classList.add(goldenClass);
+                    previousEl = previousEl.previousElementSibling;
+                };
+            };
         });
-
 
         firstStar.addEventListener('mouseout', function () {
             firstStar.classList.remove(goldenClass);
         });
 
         secondStar.addEventListener('mouseout', function () {
-
+            let previousEl = secondStar;
+            while (previousEl) {
+                previousEl.classList.remove(goldenClass);
+                previousEl = previousEl.previousElementSibling;
+            };
         });
 
         thirdStar.addEventListener('mouseout', function () {
-
+            let previousEl = thirdStar;
+            while (previousEl) {
+                previousEl.classList.remove(goldenClass);
+                previousEl = previousEl.previousElementSibling;
+            };
         });
 
         fourthStar.addEventListener('mouseout', function () {
-
+            let previousEl = fourthStar;
+            while (previousEl) {
+                previousEl.classList.remove(goldenClass)
+                previousEl = previousEl.previousElementSibling;
+            };
         });
 
         fifthStar.addEventListener('mouseout', function () {
-
+            let previousEl = fifthStar;
+            while (previousEl) {
+                previousEl.classList.remove(goldenClass)
+                previousEl = previousEl.previousElementSibling;
+            };
         });
 
-
-        /*let firstStar = document.getElementById('first');
-        let secondStar = document.getElementById('second');
-        let thirdStar = document.getElementById('third');
-        let fourthStar = document.getElementById('fourth');
-        let fifthStar = document.getElementById('fifth');
-
-        let goldenClass = 'golden';
-
-        firstStar.addEventListener('mouseover', function () {
+        /*firstStar.addEventListener('mouseover', function () {
             if (!firstStar.classList.contains('goldenClass')) {
                 firstStar.classList.add(goldenClass);
             }
