@@ -49,9 +49,9 @@ function hideMoreText(card) {
     // 5. картинке внутри .product ставим стиль display: block
     card.img.style = "display: block";
     // 5.1 внутри .product находим элемент с классом .desc и удаляем его
-    card.wrap.querySelector('.desc').
-        // 5.2 кнопке, которая внутри .product ставим текст "Подробнее"
-        card.button.innerText = "Подробнее";
+    card.wrap.querySelector('.desc').remove();
+    // 5.2 кнопке, которая внутри .product ставим текст "Подробнее"
+    card.button.innerText = "Подробнее";
 }
 
 /**
@@ -61,6 +61,7 @@ function hideMoreText(card) {
  * @param {HTMLImageElement} card.img
  * @param {HTMLDivElement} card.productName
  * @param {HTMLButtonElement} card.button 
+ * 
  */
 function showMoreText(card) {
     // 6. картинке внутри .product ставим display: none
@@ -68,7 +69,7 @@ function showMoreText(card) {
     // 6.1 сохраняем произвольный текст в переменную
     let random_text = "random_text";
     // 6.2 внутри .product есть .productName, после него вставляем div.desc и текстом из переменной из п. 6.1
-    card.productName.insertAdjacentHTML('afterend', `<div.desc>${random_text}</div.desc>`);
+    card.productName.insertAdjacentHTML('afterend', `<div class="desc">${random_text}</div>`);
     // 6.3 внутри .product у кнопки текст ставим "Отмена"
     card.button.innerText = "Отмена";
 }
